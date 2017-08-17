@@ -1,0 +1,7 @@
+---
+pro:
+  auth_token: E7tp54keqjqNCg4gssJL
+  repositories:
+    ci_travis_pesdk_html5: imgly/pesdk-html5
+    ci_travis_pesdk_ios: imgly/pesdk-ios
+  type: pro
