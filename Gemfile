@@ -16,6 +16,7 @@ gem "travis"
 # Dependencies
 
 gem 'chartmogul-ruby'
+gem 'hubspot-ruby'
 
 gem "capistrano"
 gem 'capistrano-bundler'
