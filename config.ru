@@ -1,12 +1,18 @@
 require 'dashing'
 
 configure do
-  set :auth_token, 'YOUR_AUTH_TOKEN'
+  #set :auth_token, 'YOUR_AUTH_TOKEN'
 
   helpers do
     def protected!
-      # Put any authentication code you want in here.
-      # This method is run before accessing any resource.
+      response['WWW-Authenticate'] = %(Basic realm="Restricted Area")
+      throw(:halt, [401, "Not authorized\n"])
+    end
+
+    def authorized?
+      return true
+    #@auth ||=  Rack::Auth::Basic::Request.new(request.env)
+    #@auth.provided? && @auth.basic? && @auth.credentials && #@auth.credentials == ['admin', 'veVTBfAhm3jGEkRjuQTJaCyY']
     end
   end
 end

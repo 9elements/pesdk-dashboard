@@ -1,4 +1,5 @@
-source 'https://rubygems.org'
+
+#source 'https://rubygems.org'
 
 gem 'pry'
 gem 'dashing'
@@ -15,3 +16,7 @@ gem "travis"
 # Dependencies
 
 gem 'chartmogul-ruby'
+
+gem "capistrano"
+gem 'capistrano-bundler'
+gem 'capistrano-passenger'
