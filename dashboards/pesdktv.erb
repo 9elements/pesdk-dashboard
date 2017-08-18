@@ -1,4 +1,10 @@
 <script type='text/javascript'>
+ $(function() {
+   Dashing.gridsterLayout('[{"col":2,"row":1,"size_x":1,"size_y":1},{"col":1,"row":1,"size_x":1,"size_y":1},{"col":2,"row":2,"size_x":1,"size_y":1},{"col":4,"row":1,"size_x":1,"size_y":1},{"col":3,"row":2,"size_x":1,"size_y":1},{"col":3,"row":1,"size_x":1,"size_y":1},{"col":4,"row":2,"size_x":1,"size_y":1},{"col":1,"row":2,"size_x":1,"size_y":1}]')
+ });
+ </script>
+
+<script type='text/javascript'>
 $(function() {
   // These settings override the defaults set in application.coffee. You can do this on a per dashboard basis.
 
@@ -22,7 +28,7 @@ $(function() {
     </li>
 
     <li data-row="1" data-col="1" data-sizex="1" data-sizey="1">
-      <div data-id="chartmogul:mrr_goal" data-view="Meter" data-moreinfo="Perentage of next MRR Goal" data-title="Next Goal" data-min="0" data-max="100" data-suffix='%'></div>
+      <div data-id="chartmogul:mrr_goal" data-view="Meter" data-moreinfo="Percentage of next MRR Goal" data-title="Next MRR Goal" data-min="0" data-max="100" data-suffix='%'></div>
       <i class="fa icon-background"></i>
     </li>
 

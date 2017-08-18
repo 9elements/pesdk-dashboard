@@ -11,10 +11,10 @@ require 'uri'
 # if the server you're checking redirects (from http to https for example) the check will
 # return false
 
-servers = [{name: 'www.img.ly', url: 'https://www.img.ly', method: 'http'},
-        {name: 'www.photoeditorsdk.com', url: 'https://www.photoeditorsdk.com', method: 'http'},
-        {name: 'api.photoeditorsdk.com', url: 'https://api.photoeditorsdk.com', method: 'http'},
-        {name: 'docs.photoeditorsdk.com', url: 'https://docs.photoeditorsdk.com', method: 'http'}
+servers = [{name: 'IMGLY Website', url: 'https://www.img.ly', method: 'http'},
+        {name: 'PESDK Website', url: 'https://www.photoeditorsdk.com', method: 'http'},
+        {name: 'PESDK API', url: 'https://api.photoeditorsdk.com', method: 'http'},
+        {name: 'PESDK Docs', url: 'https://docs.photoeditorsdk.com', method: 'http'}
       ]
 
 SCHEDULER.every '1m', :first_in => 0 do |job|
@@ -52,10 +52,10 @@ SCHEDULER.every '1m', :first_in => 0 do |job|
         end
 
         if result == 1
-            arrow = "icon-ok-sign"
+            arrow = "fa fa-check-circle"
             color = "green"
         else
-            arrow = "icon-warning-sign"
+            arrow = "fa fa-exclamation-triangle"
             color = "red"
         end
 
@@ -64,4 +64,6 @@ SCHEDULER.every '1m', :first_in => 0 do |job|
 
     # print statuses to dashboard
     send_event('server_status', {items: statuses})
+
+
 end
