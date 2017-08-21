@@ -1,4 +1,8 @@
-
+<script type='text/javascript'>
+ $(function() {
+   Dashing.gridsterLayout('[{"col":1,"row":1,"size_x":1,"size_y":1},{"col":2,"row":1,"size_x":1,"size_y":1},{"col":3,"row":1,"size_x":1,"size_y":1},{"col":4,"row":1,"size_x":1,"size_y":1},{"col":1,"row":2,"size_x":1,"size_y":1},{"col":4,"row":2,"size_x":1,"size_y":1},{"col":2,"row":2,"size_x":2,"size_y":1}]')
+ });
+ </script>
 
 <script type='text/javascript'>
 $(function() {
@@ -13,8 +17,6 @@ $(function() {
 
 <div class="gridster">
   <ul>
-
-
     <li data-row="1" data-col="1" data-sizex="1" data-sizey="1">
       <div data-view="Image" data-image="/pesdk_logo.png" data-width="80%" style="background-color:#FFFFFF;" ></div>
     </li>
@@ -27,7 +29,7 @@ $(function() {
 
     <li data-row="1" data-col="1" data-sizex="1" data-sizey="1">
       <div data-id="chartmogul:customers" data-view="Number" data-title="Customers" style="background-color:#96bf48;"></div>
-      <i class="fa fa-users icon-background"></i>
+      <i class="fa icon-background"></i>
     </li>
 
      <li data-row="1" data-col="1" data-sizex="1" data-sizey="1">
@@ -55,13 +57,16 @@ $(function() {
       <div data-id="server_status" data-view="ServerStatus" data-title="Server Status"></div>
     </li>
 
-    <li data-row="1" data-col="1" data-sizex="2" data-sizey="1">
+    <%# <li data-row="1" data-col="1" data-sizex="2" data-sizey="1">
       <div data-id="hubspot:deals" data-view="List" data-title="Recent Deals" data-unordered="true" data-moreinfo="The most recent deals"></div>
-    </li>
+    </li> %>
 
     <li data-row="1" data-col="1" data-sizex="1"S data-sizey="1">
-      <div data-view="Countdown" data-title="Next release" data-end="25-
+      <div data-view="Countdown" data-title="Next release" data-end="31-
       Aug-2017 12:00:00"></div>
+    </li>
+    <li data-row="1" data-col="1" data-sizex="2" data-sizey="1">
+      <div data-id="chartmogul:mrr_goal_timeseries" data-view="Graph" data-suffix="%" data-title="MRR Goal"></div>
     </li>
   </ul>
 </div>
