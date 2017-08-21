@@ -1,3 +1,9 @@
+<script type='text/javascript'>
+ $(function() {
+   Dashing.gridsterLayout('[{"col":1,"row":2,"size_x":1,"size_y":1},{"col":1,"row":1,"size_x":1,"size_y":1},{"col":2,"row":1,"size_x":1,"size_y":1},{"col":4,"row":2,"size_x":1,"size_y":1},{"col":3,"row":2,"size_x":1,"size_y":1},{"col":3,"row":1,"size_x":1,"size_y":1},{"col":2,"row":2,"size_x":1,"size_y":1},{"col":4,"row":1,"size_x":1,"size_y":1}]')
+ });
+</script>
+
 <%# <script type='text/javascript'>
  $(function() {
    Dashing.gridsterLayout('[{"col":2,"row":1,"size_x":1,"size_y":1},{"col":1,"row":1,"size_x":1,"size_y":1},{"col":2,"row":2,"size_x":1,"size_y":1},{"col":4,"row":1,"size_x":1,"size_y":1},{"col":3,"row":2,"size_x":1,"size_y":1},{"col":3,"row":1,"size_x":1,"size_y":1},{"col":4,"row":2,"size_x":1,"size_y":1},{"col":1,"row":2,"size_x":1,"size_y":1}]')
@@ -12,7 +18,8 @@
 <script type='text/javascript'>
 $(function() {
   // These settings override the defaults set in application.coffee. You can do this on a per dashboard basis.
-  Dashing.widget_base_dimensions = [480 - 16, 540 - 12]
+  // Settings for 1080p screens
+  Dashing.widget_base_dimensions = [480 - 16, 540 - 16]
   Dashing.numColumns = 4
 });
 </script>
@@ -76,7 +83,7 @@ $(function() {
     </li>
 
     <li data-row="1" data-col="1" data-sizex="1" data-sizey="1">
-      <div data-view="Countdown" data-title="Next release" data-end="25-
+      <div data-view="Countdown" data-title="Next release" data-end="31-
       Aug-2017 12:00:00"></div>
     </li>
     <%# <li data-row="1" data-col="1" data-sizex="2" data-sizey="1">
