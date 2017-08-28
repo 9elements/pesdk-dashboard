@@ -1,5 +1,5 @@
 require 'chartmogul'
-
+require 'pry'
 ChartMogul.account_token = 'cb67558394369d9edb40105f88826e9b'
 ChartMogul.secret_key = 'bf324aa567cade946a5843c097c70fb2'
 
@@ -30,8 +30,23 @@ SCHEDULER.every '200s', first_in: '0s' do
     }
   }
 
+
+  start_mrr = metrics.entries.first.mrr
+
+  all_mrr_increase = metrics
+  .entries.map.with_index{ |entry, i|
+    {
+     'x' => i,
+     'y' => (((entry.mrr-start_mrr).to_f/start_mrr.to_f)*100).to_i
+     }
+ }
+
+
   send_event(['chartmogul', 'mrr_timeseries'].join(':'), points: all_mrr, displayedValue: all_mrr.last["y"])
   send_event(['chartmogul', 'mrr_goal_timeseries'].join(':'), points: all_mrr_goal, displayedValue: all_mrr_goal.last["y"])
+
+  send_event(['chartmogul', 'mrr_increase_timeseries'].join(':'), points: all_mrr_increase, displayedValue: all_mrr_increase.last["y"])
+
 
   send_event(['chartmogul', 'mrr'].join(':'), {
     points: current_metrics.mrr/100,
@@ -63,4 +78,11 @@ SCHEDULER.every '200s', first_in: '0s' do
     value: current_metrics.mrr/next_mrr_goal
   })
 
+  send_event( ['chartmogul', 'intermedia_mrr_goal'].join(':'), {
+    value: (current_metrics.mrr-5000000)/5000
+  })
+
+  send_event( ['chartmogul', 'next_mrr_goal'].join(':'), {
+    value: (current_metrics.mrr-5000000)/10000
+  })
 end
