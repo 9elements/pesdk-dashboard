@@ -8,22 +8,25 @@ next_mrr_goal = 100000
 
 SCHEDULER.every '200s', first_in: '0s' do
   end_date = DateTime.now.iso8601.slice(0,10)
-  start_date = (DateTime.new(DateTime.now.year)).iso8601.slice(0,10)
+  if(Time.new.month == 1) 
+    start_date = "#{(Time.new.year - 1)}-12-31"
+  else
+    start_date = Time.new.strftime('%Y-%m-%d')
+  end
+
   metrics = ChartMogul::Metrics.all(start_date: start_date, end_date: end_date, interval: 'month')
 
   previous_metrics =  metrics.entries[-2]
   current_metrics =  metrics.entries[-1]
 
-  all_mrr = metrics
-    .entries.map.with_index{ |entry, i|
+  all_mrr = metrics.entries.map.with_index{ |entry, i|
     {
       'x' => i,
       'y' => entry.mrr/100
     }
   }
 
-  all_mrr_goal = metrics
-   .entries.map.with_index{ |entry, i|
+  all_mrr_goal = metrics.entries.map.with_index{ |entry, i|
     {
       'x' => i,
       'y' => (entry.mrr/next_mrr_goal).to_i
@@ -33,13 +36,12 @@ SCHEDULER.every '200s', first_in: '0s' do
 
   start_mrr = metrics.entries.first.mrr
 
-  all_mrr_increase = metrics
-  .entries.map.with_index{ |entry, i|
+  all_mrr_increase = metrics.entries.map.with_index{ |entry, i|
     {
      'x' => i,
      'y' => (((entry.mrr-start_mrr).to_f/start_mrr.to_f)*100).to_i
      }
- }
+  }
 
 
   send_event(['chartmogul', 'mrr_timeseries'].join(':'), points: all_mrr, displayedValue: all_mrr.last["y"])
