@@ -81,10 +81,10 @@ SCHEDULER.every '200s', first_in: '0s' do
   })
 
   send_event( ['chartmogul', 'intermedia_mrr_goal'].join(':'), {
-    value: (100 / 7000000.to_f) * current_metrics.mrr
+    value: ((100 / 7000000.to_f) * current_metrics.mrr).to_i
   })
 
   send_event( ['chartmogul', 'next_mrr_goal'].join(':'), {
-    value: (100 / 10000000.to_f) * current_metrics.mrr
+    value: ((100 / 10000000.to_f) * current_metrics.mrr).to_i
   })
 end
