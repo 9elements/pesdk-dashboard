@@ -4,7 +4,7 @@ ChartMogul.account_token = 'cb67558394369d9edb40105f88826e9b'
 ChartMogul.secret_key = 'bf324aa567cade946a5843c097c70fb2'
 
 
-next_mrr_goal = 100000
+next_mrr_goal = 84000
 
 SCHEDULER.every '200s', first_in: '0s' do
   end_date = DateTime.now.iso8601.slice(0,10)
@@ -85,6 +85,6 @@ SCHEDULER.every '200s', first_in: '0s' do
   })
 
   send_event( ['chartmogul', 'next_mrr_goal'].join(':'), {
-    value: ((100 / 10000000.to_f) * current_metrics.mrr).to_i
+    value: ((100 / (next_mrr_goal*1000).to_f) * current_metrics.mrr).to_i
   })
 end
