@@ -11,7 +11,7 @@ SCHEDULER.every '200s', first_in: '0s' do
   if(Time.new.month == 1) 
     start_date = "#{(Time.new.year - 1)}-12-31"
   else
-    start_date = Time.new.strftime('%Y-%m-%d')
+    start_date = "#{Time.new.strftime('%Y')}-01-01"
   end
 
   metrics = ChartMogul::Metrics.all(start_date: start_date, end_date: end_date, interval: 'month')
