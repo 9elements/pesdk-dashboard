@@ -8,11 +8,7 @@ next_mrr_goal = 84000
 
 SCHEDULER.every '200s', first_in: '0s' do
   end_date = DateTime.now.iso8601.slice(0,10)
-  if(Time.new.month == 1) 
-    start_date = "#{(Time.new.year - 1)}-12-31"
-  else
-    start_date = "#{Time.new.strftime('%Y')}-01-01"
-  end
+  start_date = "#{(Time.new.year - 1)}-12-31"
 
   metrics = ChartMogul::Metrics.all(start_date: start_date, end_date: end_date, interval: 'month')
 
