@@ -3,8 +3,8 @@ require 'pry'
 ChartMogul.account_token = 'cb67558394369d9edb40105f88826e9b'
 ChartMogul.secret_key = 'bf324aa567cade946a5843c097c70fb2'
 
-intermedia_mrr_goal = 8400000
-next_mrr_goal = 10000000
+intermedia_mrr_goal = 10800000
+next_mrr_goal = 15200000
 
 SCHEDULER.every '200s', first_in: '0s' do
   end_date = DateTime.now.iso8601.slice(0,10)
