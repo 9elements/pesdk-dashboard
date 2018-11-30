@@ -12,10 +12,31 @@ $(function() {
 });
 </script>
 
+<link href='https://fonts.googleapis.com/css?family=Roboto|Mr+Dafoe|Source+Code+Pro|Montserrat+Alternates|Open+Sans:400,300,300italic,400italic,700,700italic' rel='stylesheet' type='text/css'>
+<style>
+  #container {
+    background-color: #2F2F2F;
+    font-family: Roboto;
+  }
+
+  .gridster > h1 {
+    text-align: center;
+    font-size: 80px;
+    padding-top: 50px;
+    margin-bottom: 40px;
+    font-weight: 400;
+    font-family: 'Mr Dafoe', cursive;
+  }
+
+  h1 span {
+    color: #14af97
+  }
+</style>
 
 <% content_for :title do %>PhotoEditor SDK Dashboard<% end %>
 
-<div class="gridster" style="display: flex; height: 100vh; justify-content: center; align-items: center;">
+<div class="gridster" style="display: flex; flex-direction: column; height: 100vh; justify-content: center; align-items: center; font-family: roboto">
+  <h1>PhotoEditor<span>SDK</span></h1>
   <ul>
     <li data-row="1" data-col="1" data-sizex="1" data-sizey="1">
       <div data-id="chartmogul:intermedia_mrr_goal" data-view="Meter" data-moreinfo="Percentage of MRR" data-title="Intermediate MRR Goal" data-min="0" data-max="100" data-suffix='%'></div>

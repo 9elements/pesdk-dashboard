@@ -1,5 +1,5 @@
 require 'chartmogul'
-require 'pry'
+# require 'pry'
 ChartMogul.account_token = 'cb67558394369d9edb40105f88826e9b'
 ChartMogul.secret_key = 'bf324aa567cade946a5843c097c70fb2'
 
