@@ -1,9 +1,8 @@
 set :stage, :production
-set :app_port, 3032
 
-set :ssh_options, { forward_agent: true, port: 24005 }
+set :ssh_options, { forward_agent: true }
 
-server = 'pesdk-dashboard-internal.gort.9elements.com'
+server = '46.101.103.13'
 
 role :app, server, user: 'app'
 

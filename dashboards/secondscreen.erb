@@ -1,36 +1,26 @@
 <script type='text/javascript'>
  $(function() {
-   Dashing.gridsterLayout('[{"col":1,"row":1,"size_x":1,"size_y":1},{"col":2,"row":1,"size_x":1,"size_y":1},{"col":3,"row":1,"size_x":1,"size_y":1},{"col":4,"row":1,"size_x":1,"size_y":1},{"col":1,"row":2,"size_x":1,"size_y":1},{"col":2,"row":2,"size_x":3,"size_y":1}]')
+   Dashing.gridsterLayout('[{"col":1,"row":1,"size_x":1,"size_y":3},{"col":2,"row":1,"size_x":1,"size_y":3},{"col":3,"row":1,"size_x":1,"size_y":3}]')
  });
  </script>
 
 <script type='text/javascript'>
 $(function() {
   // These settings override the defaults set in application.coffee. You can do this on a per dashboard basis.
-  Dashing.widget_base_dimensions = [460, 460]
-  Dashing.numColumns = 4
+  Dashing.widget_base_dimensions = [650, 650]
+  Dashing.numColumns = 3
 });
 </script>
 
 
 <% content_for :title do %>PhotoEditor SDK Dashboard<% end %>
 
-<div class="gridster">
+<div class="gridster" style="display: flex; height: 100vh; justify-content: center; align-items: center;">
   <ul>
-    <li data-row="1" data-col="1" data-sizex="1" data-sizey="1">
-      <div data-view="Image" data-image="/pesdk_logo.png" data-width="80%" style="background-color:#FFFFFF;" ></div>
-    </li>
-
     <li data-row="1" data-col="1" data-sizex="1" data-sizey="1">
       <div data-id="chartmogul:intermedia_mrr_goal" data-view="Meter" data-moreinfo="Percentage of MRR" data-title="Intermediate MRR Goal" data-min="0" data-max="100" data-suffix='%'></div>
       <i class="fa icon-background"></i>
     </li>
-
-    <li data-row="1" data-col="1" data-sizex="1" data-sizey="1">
-      <div data-id="chartmogul:next_mrr_goal" data-view="Meter" data-moreinfo="Percentage of MRR" data-title="Next MRR Goal" data-min="0" data-max="100" data-suffix='%'></div>
-      <i class="fa icon-background"></i>
-    </li>
-
 
     <li data-row="1" data-col="1" data-sizex="1" data-sizey="1">
       <div data-id="chartmogul:customers" data-view="Number" data-title="Customers" style="background-color:#96bf48;"></div>
@@ -38,11 +28,8 @@ $(function() {
     </li>
 
     <li data-row="1" data-col="1" data-sizex="1" data-sizey="1">
-      <div data-id="server_status" data-view="ServerStatus" data-title="Server Status"></div>
-    </li>
-
-    <li data-row="1" data-col="1" data-sizex="3" data-sizey="1">
-      <div data-id="chartmogul:mrr_increase_timeseries" data-view="Graph" data-suffix="%" data-title="MRR increase since beginning of year"></div>
+      <div data-id="chartmogul:next_mrr_goal" data-view="Meter" data-moreinfo="Percentage of MRR" data-title="Next MRR Goal" data-min="0" data-max="100" data-suffix='%'></div>
+      <i class="fa icon-background"></i>
     </li>
   </ul>
 </div>
